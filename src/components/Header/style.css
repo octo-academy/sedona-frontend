@@ -1,11 +1,45 @@
+.menu {
+    position: relative;
+    padding: 0 1em;
+}
+
 .menu-list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2em 0;
-    padding: 0;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 15px 0;
+    margin: 0;
+    list-style: none;
 }
 
 .menu-item {
-    list-style: none;
+    flex: 0 0 20%;
+}
+
+.menu-item:nth-child(4n + 1),
+.menu-item:nth-child(4n + 2) {
+    text-align: left;
+}
+
+.menu-item:nth-child(4n + 3),
+.menu-item:nth-child(4n + 4) {
+    text-align: right;
+}
+
+.menu-item:nth-child(4n + 1) {
+    margin-left: 6%;
+}
+
+.menu-item:nth-child(4n + 2) {
+    margin-right: 8%;
+}
+
+.menu-item:nth-child(4n) {
+    margin-right: 6%;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
