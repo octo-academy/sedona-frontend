@@ -1,0 +1,11 @@
+.menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 0;
+    padding: 0;
+}
+
+.menu-item {
+    list-style: none;
+}
