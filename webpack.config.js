@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -10,7 +11,8 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
-        compress: true
+        compress: true,
+        hot: true
     },
     module: {
         rules: [
@@ -24,16 +26,9 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: "babel-loader"
-            },
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                use: "babel-loader"
             }, {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    { loader: 'file-loader' }
-                ]
+                use: 'file-loader'
             }
         ]
     },
@@ -42,6 +37,7 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
             inject: 'body'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };

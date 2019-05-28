@@ -30,11 +30,4 @@ const render = Component => {
     )
 };
 
-// render(() => (<h1 style={{ textAlign: 'center' }}>Hello World!</h1>));
 render(() => <App />);
-
-if (module.hot) {
-    module.hot.accept('./components/App', () => {
-        render(() => (<h1>Hello World!</h1>))
-    })
-}
