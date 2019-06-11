@@ -12,7 +12,8 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         compress: true,
-        hot: true
+        hot: true,
+        inline: false
     },
     module: {
         rules: [
