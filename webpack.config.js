@@ -17,16 +17,14 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.css$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader" }
-                ]
+            {
+                test: /\.(css|scss|sass)$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: "babel-loader"
+                use: 'babel-loader'
             }, {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: 'file-loader'
